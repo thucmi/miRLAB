@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "test_Pearson=function(){\n  \n}",
+    "created" : 1444799595310.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3669884287",
+    "id" : "2FE2D7E4",
+    "lastKnownWriteTime" : 1432625522,
+    "last_content_update" : 0,
+    "path" : "D:/Dropbox-letd/Dropbox/PROJECTS-WORKING/miRLAB-APPLICATION-NOTE/Project/miRLAB/inst/unitTests/test_Pearson.R",
+    "project_path" : "inst/unitTests/test_Pearson.R",
+    "properties" : {
+    },
+    "relative_order" : 0,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

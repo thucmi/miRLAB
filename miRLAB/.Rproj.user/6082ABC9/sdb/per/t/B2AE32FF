@@ -1,0 +1,16 @@
+{
+    "contents" : "#######################################\n# 2015-11-06\n\n# miRNAListFile=\"miRNAList.csv\"\n# sourceV=16\n# targetV=21\n\nconvert = function (miRNAListFile,sourceV,targetV) {\n    load( \"database.RData\" )\n    miRNAList = as.matrix( read.csv( miRNAListFile ,header = F) )\n    sourceName = miRNAList\n    sourceVersion = c()\n    targetName = c()\n    targetVersion = c()\n\n    if (sourceV != 0) # have the source version\n    {\n        location = match( miRNAList, all[,sourceV-14] )\n        isNA = is.na(location)\n        targetVersion[which(!isNA)] = targetV\n        targetVersion[which(isNA)] = NA\n        targetName = all[location, targetV-14]\n        sourceVersion = rep(sourceV,length(miRNAList))\n    }else \n    {\n        allVersionList = c(all[,2],all[,3],all[,4],all[,5],all[,6],all[,7])\n        location = match(miRNAList, allVersionList)\n        sourceVersion = 16 + (location %/% 2602)\n        isNA = is.na(location)\n        targetVersion[which(!isNA)] = targetV\n        targetVersion[which(isNA)] = NA\n        location = location %% 2602\n        location[which(location == 0)] = 2602\n        targetName = all[location, targetV-14]\n    }\n    \n    res = cbind(sourceName, sourceVersion, targetName, targetVersion)\n    colnames(res) = c(\"sourceName\",\"sourceVersion\",\"targetName\",\"targetVersion\")\n    write.table(res, file=\"resOfConvert.csv\", sep=\",\",row.names = FALSE,col.names = TRUE)\n}\n\n # convert(miRNAListFile=\"miRNAList.csv\",sourceV=16,targetV=21)\n",
+    "created" : 1447071980963.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2881304616",
+    "id" : "B2AE32FF",
+    "lastKnownWriteTime" : 1447025713,
+    "path" : "D:/Dropbox/PROJECTS-WORKING/miRLAB-APPLICATION-NOTE/Project/test/convert1.R",
+    "project_path" : null,
+    "properties" : {
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}

@@ -1,0 +1,17 @@
+{
+    "contents" : "#' miRNA target prediction with the ProMISe method\n#' \n#' Calculate the ProMISe score of each pair of miRNA-mRNA, and return a matrix of values with columns are miRNAs and rows are mRNAs.\n#' @importFrom Roleswitch roleswitch\n#' @param datacsv the input dataset in csv format\n#' @param cause the column range that specifies the causes (miRNAs), e.g. 1:35\n#' @param effect the column range that specifies the effects (mRNAs), e.g. 36:2000\n#' @param targetbinding the putative target, e.g. \"TargetScan.csv\". If targetbinding is not specified, only expression data is used.\n#' If targetbinding is specified, the prediction results using expression data with be intersected with the interactions in the target binding file.\n#' @return A  matrix that includes the ProMISe scores. Columns are miRNAs, rows are mRNAs.\n#' @examples \n#' dataset=system.file(\"extdata\", \"ToyEMT.csv\", package=\"miRLAB\")\n#' results=ProMISe(dataset, 1:3, 4:18) \n#' @references\n#' Li, Y., Liang, C., Wong, K.C., Jin, K., and Zhang, Z. (2014). Inferring probabilistic miRNA - mRNA interaction signatures in cancers: a role-switch approach. Nucleic Acids Res., 42, e76-e76.\n#' @export \n## 13. ProMISe ##\nProMISe=function(datacsv, cause, effect, targetbinding=NA){\n      # library(\"Roleswitch\")\n        dt<-Read(datacsv)\n        dd<-colMeans(dt)\n        stdData<-as.matrix(dd)\n        header<-readHeader(datacsv)\n        num_miRNA<-length(cause)\n        miR<-header[1:num_miRNA]\n        mR<-header[-(1:num_miRNA)]\n\n        x.o<-matrix(stdData[effect,],dimnames=list(c(1:length(effect)),\"mRNA\"))\n        z.o<-matrix(stdData[cause,],dimnames=list(c(1:length(cause)),\"miRNA\"))\n        c<-matrix(1,length(effect),length(cause)) #Generate ones matrix\n        rownames(c)<-c(1:length(effect))\n        colnames(c)<-c(1:length(cause))\n\n        rMatrix <- roleswitch(x.o,z.o,c)$p.xz # Calculate ProMISe probabilistic\n        rownames(rMatrix) <- colnames(dt)[effect]\n        colnames(rMatrix) <- colnames(dt)[cause]\n        \nif(is.na(targetbinding)==FALSE){\n#query knowledge matrix from file\nedgeTargetScan<-queryTargetFile(miR,mR,targetbinding); \nedgeTargetScan<-edgeTargetScan+t(edgeTargetScan);\nedgeTargetScan<-edgeTargetScan!=0;\nedge=edgeTargetScan[effect,cause]\nrMatrix=rMatrix*edge\n}\n\nreturn(rMatrix)\n}\n\n",
+    "created" : 1433082816487.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2772072026",
+    "id" : "1EFD09ED",
+    "lastKnownWriteTime" : 1433082956,
+    "path" : "~/Dropbox/PROJECTS-WORKING/miRLAB-APPLICATION-NOTE/Project/BACKUP-miRLAB/roleswitch.R",
+    "project_path" : null,
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}

@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "\\name{miRLAB-package}\n\\alias{miRLAB-package}\n\\alias{miRLAB}\n\\docType{package}\n\\title{\nA dry lab for exploring miRNA-mRNA relationships\n}\n\\description{\nProvide tools exploring miRNA-mRNA relationships, including popular miRNA target prediction methods using expression data, ensemble methods that integrate individual methods, functions to get data from online resources, functions to validate the results, and functions to conduct enrichment analyses. \n}\n\\details{\n\\tabular{ll}{\nPackage: \\tab miRLAB\\cr\nType: \\tab Package\\cr\nVersion: \\tab 0.99\\cr\nDate: \\tab 2015-04-23\\cr\nLicense: \\tab GPL(>=2)\\cr\n}\n\n}\n\\author{\nThuc Duy Le, Junpeng Zhang\n\nMaintainer: Thuc Duy Le <Thuc.Le@unisa.edu.au>\n}\n\\references{\nmiRLAB: An R based dry lab for exploring miRNA-mRNA relationships\n}\n\\keyword{\npackage \n}\n\n\n",
+    "created" : 1430461669757.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2033280162",
+    "id" : "7A2D0786",
+    "lastKnownWriteTime" : 1446702145,
+    "last_content_update" : 0,
+    "path" : "D:/Dropbox-letd/Dropbox/PROJECTS-WORKING/miRLAB-APPLICATION-NOTE/Project/miRLAB/man/miRLAB-package.Rd",
+    "project_path" : "man/miRLAB-package.Rd",
+    "properties" : {
+    },
+    "relative_order" : 0,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_doc"
+}

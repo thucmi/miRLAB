@@ -1,0 +1,16 @@
+{
+    "contents" : "citHeader(\"To cite miRLAB in publications use:\")\ncitEntry(entry = \"Article\",\n  title        = \"miRLAB: An R Based Dry Lab for Exploring miRNA-mRNA Regulatory Relationships\",\n  author       = personList(as.person(\"Thuc Duy Le\"),\n                   as.person(\"Junpeng Zhang\"),\n                   as.person(\"Lin Liu\"),\n                   as.person(\"Huawen Liu\"),\n                   as.person(\"Jiuyong Li\")),\n  journal      = \"PLoS ONE\",\n  year         = \"2015\",\n  volume       = \"10\",\n  number       = \"12\",\n  pages        = \"e0145386\",\n  url          = \"http://dx.doi.org/10.1371%2Fjournal.pone.0145386\",\n\n  textVersion  =\n  paste(\"Le TD, Zhang J, Liu L, Liu H, Li J (2015) miRLAB: An R Based Dry Lab for Exploring miRNA-mRNA Regulatory Relationships. PLoS ONE 10(12): e0145386. doi: 10.1371/journal.pone.0145386\")\n)\n\n",
+    "created" : 1451958428636.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3906967979",
+    "id" : "E4EB6360",
+    "lastKnownWriteTime" : 1451523202,
+    "path" : "~/Dropbox/PROJECTS-WORKING/miRLAB-APPLICATION-NOTE/Project/miRLAB/inst/CITATION",
+    "project_path" : "inst/CITATION",
+    "properties" : {
+    },
+    "source_on_save" : false,
+    "type" : "text"
+}
